@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/robertsbaer/Nations/static/css/main.6063c591.css",
-    "main.js": "/robertsbaer/Nations/static/js/main.69719c73.js",
-    "static/js/453.6ee33e63.chunk.js": "/robertsbaer/Nations/static/js/453.6ee33e63.chunk.js",
-    "index.html": "/robertsbaer/Nations/index.html",
-    "main.6063c591.css.map": "/robertsbaer/Nations/static/css/main.6063c591.css.map",
-    "main.69719c73.js.map": "/robertsbaer/Nations/static/js/main.69719c73.js.map",
-    "453.6ee33e63.chunk.js.map": "/robertsbaer/Nations/static/js/453.6ee33e63.chunk.js.map"
+    "main.css": "/Nations/static/css/main.6063c591.css",
+    "main.js": "/Nations/static/js/main.e8df34ab.js",
+    "static/js/453.6ee33e63.chunk.js": "/Nations/static/js/453.6ee33e63.chunk.js",
+    "index.html": "/Nations/index.html",
+    "main.6063c591.css.map": "/Nations/static/css/main.6063c591.css.map",
+    "main.e8df34ab.js.map": "/Nations/static/js/main.e8df34ab.js.map",
+    "453.6ee33e63.chunk.js.map": "/Nations/static/js/453.6ee33e63.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6063c591.css",
-    "static/js/main.69719c73.js"
+    "static/js/main.e8df34ab.js"
   ]
 }
