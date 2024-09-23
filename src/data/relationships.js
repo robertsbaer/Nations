@@ -353,7 +353,7 @@ export const relationships = [
   {
     id: "PSE-JORD-Allies",
     nation1Id: "PSE",
-    nation2Id: "JORD",
+    nation2Id: "JOR",
     relationship: "Allies",
     details:
       "Jordan supports Palestinian statehood and hosts a large number of Palestinian refugees.",
@@ -547,5 +547,77 @@ export const relationships = [
     relationship: "Conflict",
     details:
       "Nagorno-Karabakh conflict over disputed territory; multiple wars, with recent fighting in 2020 and 2022.",
+  },
+  {
+    id: "ARM-ART-SupportiveRelations",
+    nation1Id: "ARM",
+    nation2Id: "ART",
+    relationship: "Supportive Relations",
+    details:
+      "Armenia supports Artsakh but does not officially recognize its independence due to geopolitical complexities and ongoing negotiations with Azerbaijan.",
+  },
+  {
+    id: "ABH-ART-LimitedRecognition",
+    nation1Id: "ABH",
+    nation2Id: "ART",
+    relationship: "Limited Recognition",
+    details:
+      "Abkhazia, a partially recognized state, has recognized Artsakh's independence.",
+  },
+  {
+    id: "SOH-ART-LimitedRecognition",
+    nation1Id: "SOH",
+    nation2Id: "ART",
+    relationship: "Limited Recognition",
+    details:
+      "South Ossetia, a partially recognized state, has recognized Artsakh's independence.",
+  },
+  {
+    id: "TRN-ART-LimitedRecognition",
+    nation1Id: "TRN",
+    nation2Id: "ART",
+    relationship: "Limited Recognition",
+    details:
+      "Transnistria, a partially recognized state, has recognized Artsakh's independence.",
+  },
+  {
+    id: "MAR-FRA-StrategicPartners",
+    nation1Id: "MAR",
+    nation2Id: "FRA",
+    relationship: "Strategic Partners",
+    details:
+      "Strong historical and cultural ties; significant economic cooperation and trade relations. France is a major investor in Morocco and supports its development projects.",
+  },
+  {
+    id: "MAR-FRA-MigrationCooperation",
+    nation1Id: "MAR",
+    nation2Id: "FRA",
+    relationship: "Migration Cooperation",
+    details:
+      "Collaboration on managing migration flows; agreements on labor migration and combating illegal immigration. France hosts a large Moroccan diaspora community.",
+  },
+  {
+    id: "MAR-DEU-EconomicPartners",
+    nation1Id: "MAR",
+    nation2Id: "DEU",
+    relationship: "Economic Partners",
+    details:
+      "Germany is one of Morocco's major European trading partners; cooperation on renewable energy projects and development aid. Morocco serves as a gateway for German businesses in Africa.",
+  },
+  {
+    id: "DEU-DZA-EconomicPartners",
+    nation1Id: "DEU",
+    nation2Id: "DZA",
+    relationship: "Economic Partners",
+    details:
+      "Germany is one of Algeria's major European trading partners; cooperation on energy sector development and renewable energy projects. Germany provides technical assistance and development aid to Algeria.",
+  },
+  {
+    id: "ISR-PSE-War",
+    nation1Id: "ISR",
+    nation2Id: "PSE",
+    relationship: "War",
+    details:
+      "Ongoing armed conflict with escalations; disputes over territory, sovereignty, and security. Humanitarian crisis in Gaza; international attempts at mediation and peace processes have been unsuccessful. Israel is accused of genocide.",
   },
 ];

@@ -1,6 +1,7 @@
 // src/components/SubmitSuggestion.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import emailjs from "emailjs-com";
+import Fuse from "fuse.js";
 import {
   Box,
   TextField,
@@ -8,7 +9,9 @@ import {
   Typography,
   MenuItem,
   Snackbar,
+  Alert,
 } from "@mui/material";
+import Autocomplete from "@mui/lab/Autocomplete";
 import { nations } from "../data/nations";
 import { relationships } from "../data/relationships";
 
@@ -21,14 +24,49 @@ const SubmitSuggestion = ({ nationMap }) => {
   });
   const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
+  const [warning, setWarning] = useState("");
 
+  // Extract and sort nations alphabetically
+  const sortedNations = [...nations].sort((a, b) =>
+    a.name.localeCompare(b.name)
+  );
+
+  // Extract existing relationship types
   const relationshipTypes = Array.from(
     new Set(relationships.map((r) => r.relationship))
-  );
+  ).sort((a, b) => a.localeCompare(b));
+
+  // Set up Fuse.js for fuzzy searching relationship types
+  const fuse = new Fuse(relationshipTypes, {
+    includeScore: true,
+    threshold: 0.3, // Adjust this value to set sensitivity
+  });
+
+  useEffect(() => {
+    setWarning("");
+
+    if (formData.relationship.trim() !== "") {
+      const results = fuse.search(formData.relationship);
+
+      if (results.length > 0) {
+        const similarType = results[0].item;
+        if (similarType.toLowerCase() !== formData.relationship.toLowerCase()) {
+          setWarning(
+            `A similar relationship type "${similarType}" already exists. Please check if it doesn't already exist.`
+          );
+        }
+      }
+    }
+  }, [formData.relationship]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+    setError("");
+  };
+
+  const handleAutocompleteChange = (event, value) => {
+    setFormData({ ...formData, relationship: value || "" });
     setError("");
   };
 
@@ -42,7 +80,7 @@ const SubmitSuggestion = ({ nationMap }) => {
           rel.nation2Id === formData.nation2Id) ||
           (rel.nation1Id === formData.nation2Id &&
             rel.nation2Id === formData.nation1Id)) &&
-        rel.relationship === formData.relationship
+        rel.relationship.toLowerCase() === formData.relationship.toLowerCase()
     );
 
     if (exists) {
@@ -103,7 +141,7 @@ const SubmitSuggestion = ({ nationMap }) => {
           fullWidth
           margin="normal"
         >
-          {nations.map((nation) => (
+          {sortedNations.map((nation) => (
             <MenuItem key={nation.id} value={nation.id}>
               {nation.name}
             </MenuItem>
@@ -119,39 +157,36 @@ const SubmitSuggestion = ({ nationMap }) => {
           fullWidth
           margin="normal"
         >
-          {nations.map((nation) => (
+          {sortedNations.map((nation) => (
             <MenuItem key={nation.id} value={nation.id}>
               {nation.name}
             </MenuItem>
           ))}
         </TextField>
-        <TextField
-          label="Relationship Type"
-          name="relationship"
+        <Autocomplete
+          freeSolo
+          options={relationshipTypes}
           value={formData.relationship}
-          onChange={handleChange}
-          required
-          fullWidth
-          margin="normal"
-          select
-        >
-          {relationshipTypes.map((type) => (
-            <MenuItem key={type} value={type}>
-              {type}
-            </MenuItem>
-          ))}
-          <MenuItem value="Other">Other</MenuItem>
-        </TextField>
-        {formData.relationship === "Other" && (
-          <TextField
-            label="Specify Relationship"
-            name="relationship"
-            value={formData.relationship}
-            onChange={handleChange}
-            required
-            fullWidth
-            margin="normal"
-          />
+          onChange={handleAutocompleteChange}
+          onInputChange={(event, value) => {
+            setFormData({ ...formData, relationship: value });
+            setError("");
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Relationship Type"
+              name="relationship"
+              required
+              fullWidth
+              margin="normal"
+            />
+          )}
+        />
+        {warning && (
+          <Box mt={1}>
+            <Alert severity="warning">{warning}</Alert>
+          </Box>
         )}
         <TextField
           label="Details"
@@ -165,9 +200,9 @@ const SubmitSuggestion = ({ nationMap }) => {
           rows={4}
         />
         {error && (
-          <Typography color="error" variant="body2">
-            {error}
-          </Typography>
+          <Box mt={1}>
+            <Alert severity="error">{error}</Alert>
+          </Box>
         )}
         <Button
           type="submit"
@@ -188,8 +223,11 @@ const SubmitSuggestion = ({ nationMap }) => {
         open={success}
         autoHideDuration={6000}
         onClose={() => setSuccess(false)}
-        message="Suggestion submitted successfully!"
-      />
+      >
+        <Alert onClose={() => setSuccess(false)} severity="success">
+          Suggestion submitted successfully!
+        </Alert>
+      </Snackbar>
     </Box>
   );
 };
