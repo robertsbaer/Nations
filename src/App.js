@@ -62,7 +62,7 @@ function App() {
   });
 
   return (
-    <Router>
+    <Router basename="/Nations">
       <div style={{ width: "100vw", height: "100vh" }}>
         <AppBar position="static">
           <Toolbar>
