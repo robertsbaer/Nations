@@ -1,7 +1,6 @@
-// src/data/relationships.js
 export const relationships = [
-  // North America
   {
+    id: "USA-CAN-Allies",
     nation1Id: "USA",
     nation2Id: "CAN",
     relationship: "Allies",
@@ -9,6 +8,39 @@ export const relationships = [
       "Strong economic and military partnership; shared border, part of NATO, cooperate on security and environmental issues.",
   },
   {
+    id: "USA-CAN-Trade",
+    nation1Id: "USA",
+    nation2Id: "CAN",
+    relationship: "Trade Partners",
+    details:
+      "Significant trade under USMCA agreement; cooperation on border security and immigration issues.",
+  },
+  {
+    id: "USA-CAN-Cultural",
+    nation1Id: "USA",
+    nation2Id: "CAN",
+    relationship: "Cultural Exchanges",
+    details:
+      "Strong cultural exchange through media, sports, and tourism; both nations share values of democracy and human rights.",
+  },
+  {
+    id: "USA-CAN-Diplomatic",
+    nation1Id: "USA",
+    nation2Id: "CAN",
+    relationship: "Diplomatic Relations",
+    details:
+      "Historically close diplomatic relations; continuous dialogue on security, trade, and environmental matters.",
+  },
+  {
+    id: "USA-CAN-Environmental",
+    nation1Id: "USA",
+    nation2Id: "CAN",
+    relationship: "Environmental Cooperation",
+    details:
+      "Joint efforts to manage and protect shared water bodies, combat climate change, and promote renewable energy.",
+  },
+  {
+    id: "USA-MEX-Trade",
     nation1Id: "USA",
     nation2Id: "MEX",
     relationship: "Trade Partners",
@@ -16,15 +48,15 @@ export const relationships = [
       "Significant trade under USMCA agreement; cooperation on border security and immigration issues.",
   },
   {
+    id: "CAN-MEX-Trade",
     nation1Id: "CAN",
     nation2Id: "MEX",
     relationship: "Trade Partners",
     details:
       "Members of USMCA trade agreement; growing tourism and cultural exchange.",
   },
-
-  // South America
   {
+    id: "BRA-ARG-Trade",
     nation1Id: "BRA",
     nation2Id: "ARG",
     relationship: "Trade Partners",
@@ -32,6 +64,7 @@ export const relationships = [
       "Members of Mercosur regional trade bloc; cooperation on energy and infrastructure projects.",
   },
   {
+    id: "BRA-COL-Allies",
     nation1Id: "BRA",
     nation2Id: "COL",
     relationship: "Allies",
@@ -39,15 +72,15 @@ export const relationships = [
       "Regional cooperation in South America; joint initiatives on biodiversity and deforestation.",
   },
   {
+    id: "VEN-COL-Tense",
     nation1Id: "VEN",
     nation2Id: "COL",
     relationship: "Tense Relations",
     details:
       "Border disputes, political tensions, and humanitarian crises related to migration.",
   },
-
-  // Europe
   {
+    id: "GBR-FRA-Allies",
     nation1Id: "GBR",
     nation2Id: "FRA",
     relationship: "Allies",
@@ -55,6 +88,7 @@ export const relationships = [
       "Collaboration within NATO; strong military and historical ties; Brexit strained relations but cooperation continues on security.",
   },
   {
+    id: "DEU-FRA-Allies",
     nation1Id: "DEU",
     nation2Id: "FRA",
     relationship: "Allies",
@@ -62,6 +96,7 @@ export const relationships = [
       "Founding members of the EU; strong economic ties, especially in manufacturing and finance.",
   },
   {
+    id: "ITA-DEU-Allies",
     nation1Id: "ITA",
     nation2Id: "DEU",
     relationship: "Allies",
@@ -69,6 +104,7 @@ export const relationships = [
       "EU members with significant trade relationships; cooperation on refugee crisis and European energy policies.",
   },
   {
+    id: "ESP-PRT-Allies",
     nation1Id: "ESP",
     nation2Id: "PRT",
     relationship: "Allies",
@@ -76,6 +112,7 @@ export const relationships = [
       "Strong cultural and historical ties; shared interests in Iberian Peninsula development and EU cooperation.",
   },
   {
+    id: "SWE-NOR-Allies",
     nation1Id: "SWE",
     nation2Id: "NOR",
     relationship: "Allies",
@@ -83,6 +120,7 @@ export const relationships = [
       "Nordic cooperation; shared cultural heritage; collaborate in defense and sustainability projects.",
   },
   {
+    id: "FIN-RUS-Tense",
     nation1Id: "FIN",
     nation2Id: "RUS",
     relationship: "Tense Relations",
@@ -90,6 +128,7 @@ export const relationships = [
       "Historical conflicts; cautious diplomacy over regional security, especially regarding NATO expansion.",
   },
   {
+    id: "POL-UKR-Allies",
     nation1Id: "POL",
     nation2Id: "UKR",
     relationship: "Allies",
@@ -97,15 +136,15 @@ export const relationships = [
       "Supportive relations, especially in recent years, with Poland providing military and humanitarian aid to Ukraine.",
   },
   {
+    id: "RUS-GBR-Tense",
     nation1Id: "RUS",
     nation2Id: "GBR",
     relationship: "Tense Relations",
     details:
       "Geopolitical tensions over issues like Crimea and military presence in Eastern Europe.",
   },
-
-  // Asia
   {
+    id: "CHN-IND-Tense",
     nation1Id: "CHN",
     nation2Id: "IND",
     relationship: "Tense Relations",
@@ -113,6 +152,7 @@ export const relationships = [
       "Border disputes along the Himalayas; competition for influence in Asia.",
   },
   {
+    id: "CHN-PAK-Strategic",
     nation1Id: "CHN",
     nation2Id: "PAK",
     relationship: "Strategic Partners",
@@ -120,6 +160,7 @@ export const relationships = [
       "Cooperation on economic projects like CPEC; strategic military ties.",
   },
   {
+    id: "IND-PAK-Adversaries",
     nation1Id: "IND",
     nation2Id: "PAK",
     relationship: "Adversaries",
@@ -127,6 +168,7 @@ export const relationships = [
       "Long-standing territorial disputes over Kashmir; intermittent peace talks but no resolution.",
   },
   {
+    id: "JPN-KOR-Tense",
     nation1Id: "JPN",
     nation2Id: "KOR",
     relationship: "Tense Relations",
@@ -134,6 +176,7 @@ export const relationships = [
       "Historical issues and territorial disputes; strained despite economic interdependence.",
   },
   {
+    id: "KOR-PRK-Tense",
     nation1Id: "KOR",
     nation2Id: "PRK",
     relationship: "Tense Relations",
@@ -141,6 +184,7 @@ export const relationships = [
       "Technically still at war since 1953 armistice; periodic peace efforts, but little progress.",
   },
   {
+    id: "CHN-VNM-Tense",
     nation1Id: "CHN",
     nation2Id: "VNM",
     relationship: "Tense Relations",
@@ -148,6 +192,7 @@ export const relationships = [
       "Disputes over the South China Sea and territorial waters; trade ties remain important.",
   },
   {
+    id: "IDN-AUS-Trade",
     nation1Id: "IDN",
     nation2Id: "AUS",
     relationship: "Trade Partners",
@@ -155,6 +200,7 @@ export const relationships = [
       "Significant trade and regional cooperation; maritime security is a shared concern.",
   },
   {
+    id: "PHL-USA-Allies",
     nation1Id: "PHL",
     nation2Id: "USA",
     relationship: "Allies",
@@ -162,12 +208,14 @@ export const relationships = [
       "Mutual Defense Treaty since 1951; significant military cooperation.",
   },
   {
+    id: "AUS-USA-Allies",
     nation1Id: "AUS",
     nation2Id: "USA",
     relationship: "Allies",
     details: "ANZUS Treaty; strong military cooperation in the Pacific region.",
   },
   {
+    id: "CHN-JPN-Tense",
     nation1Id: "CHN",
     nation2Id: "JPN",
     relationship: "Tense Relations",
@@ -175,6 +223,7 @@ export const relationships = [
       "Historical issues affecting current diplomatic relations; competing influence in Asia.",
   },
   {
+    id: "BGD-IND-Allies",
     nation1Id: "BGD",
     nation2Id: "IND",
     relationship: "Allies",
@@ -182,6 +231,7 @@ export const relationships = [
       "Strong cultural and economic ties; cooperation on regional issues.",
   },
   {
+    id: "AFG-PAK-Tense",
     nation1Id: "AFG",
     nation2Id: "PAK",
     relationship: "Tense Relations",
@@ -189,6 +239,7 @@ export const relationships = [
       "Border disputes and security issues; strained over insurgency and Taliban influence.",
   },
   {
+    id: "IRN-AFG-Strategic",
     nation1Id: "IRN",
     nation2Id: "AFG",
     relationship: "Strategic Partners",
@@ -196,6 +247,7 @@ export const relationships = [
       "Cooperation on economic and security matters; influence in the region post-U.S. withdrawal.",
   },
   {
+    id: "IRN-IRQ-Strategic",
     nation1Id: "IRN",
     nation2Id: "IRQ",
     relationship: "Strategic Partners",
@@ -203,6 +255,7 @@ export const relationships = [
       "Cooperation post-2003 Iraq War with strong economic ties and shared Shia leadership.",
   },
   {
+    id: "SAU-IRN-Adversaries",
     nation1Id: "SAU",
     nation2Id: "IRN",
     relationship: "Adversaries",
@@ -210,6 +263,7 @@ export const relationships = [
       "Regional rivals with differing sectarian leadership (Sunni vs Shia); competition over regional dominance.",
   },
   {
+    id: "ISR-EGY-Diplomatic",
     nation1Id: "ISR",
     nation2Id: "EGY",
     relationship: "Diplomatic Relations",
@@ -217,15 +271,15 @@ export const relationships = [
       "Peace treaty since 1979; cooperation on security matters, especially in Sinai.",
   },
   {
+    id: "SYR-TUR-Tense",
     nation1Id: "SYR",
     nation2Id: "TUR",
     relationship: "Tense Relations",
     details:
       "Conflict spillover from Syria and refugee crisis; issues over Kurdish regions.",
   },
-
-  // Africa
   {
+    id: "EGY-ETH-Tense",
     nation1Id: "EGY",
     nation2Id: "ETH",
     relationship: "Tense Relations",
@@ -233,6 +287,7 @@ export const relationships = [
       "Disputes over Nile River usage, especially with Ethiopia's dam projects.",
   },
   {
+    id: "KEN-ETH-Allies",
     nation1Id: "KEN",
     nation2Id: "ETH",
     relationship: "Allies",
@@ -240,6 +295,7 @@ export const relationships = [
       "Regional cooperation in East Africa; collaborate on infrastructure and security.",
   },
   {
+    id: "ZAF-NGA-Trade",
     nation1Id: "ZAF",
     nation2Id: "NGA",
     relationship: "Trade Partners",
@@ -247,24 +303,23 @@ export const relationships = [
       "Economic cooperation within the African Union; competition for leadership in the continent.",
   },
   {
+    id: "MAR-DZA-Tense",
     nation1Id: "MAR",
     nation2Id: "DZA",
     relationship: "Tense Relations",
     details:
       "Disputes over Western Sahara region; diplomatic ties have been cut multiple times.",
   },
-
-  // Oceania
   {
+    id: "AUS-NZL-Allies",
     nation1Id: "AUS",
     nation2Id: "NZL",
     relationship: "Allies",
     details:
       "Strong bilateral relations and shared interests; cooperate on defense and trade in the Pacific region.",
   },
-
-  // Middle East
   {
+    id: "ARE-KWT-Allies",
     nation1Id: "ARE",
     nation2Id: "KWT",
     relationship: "Allies",
@@ -272,6 +327,7 @@ export const relationships = [
       "Members of the Gulf Cooperation Council (GCC); cooperation on regional security and energy.",
   },
   {
+    id: "QAT-SAU-Tense",
     nation1Id: "QAT",
     nation2Id: "SAU",
     relationship: "Tense Relations",
@@ -279,13 +335,15 @@ export const relationships = [
       "Diplomatic crisis over regional policies; blockade by Saudi Arabia ended in 2021.",
   },
   {
+    id: "ISR-PSE-Conflict",
     nation1Id: "ISR",
-    nation2Id: "PSE", // PSE for Palestine
+    nation2Id: "PSE",
     relationship: "Conflict",
     details:
       "Long-standing territorial and political conflict over land, sovereignty, and rights; frequent violence and international mediation efforts.",
   },
   {
+    id: "PSE-EGY-Allies",
     nation1Id: "PSE",
     nation2Id: "EGY",
     relationship: "Allies",
@@ -293,15 +351,15 @@ export const relationships = [
       "Egypt often mediates ceasefires between Israel and Palestinian groups; provides humanitarian aid to Gaza.",
   },
   {
+    id: "PSE-JORD-Allies",
     nation1Id: "PSE",
     nation2Id: "JORD",
     relationship: "Allies",
     details:
       "Jordan supports Palestinian statehood and hosts a large number of Palestinian refugees.",
   },
-
-  // Additional relationships
   {
+    id: "USA-CHN-Strategic",
     nation1Id: "USA",
     nation2Id: "CHN",
     relationship: "Strategic Rivals",
@@ -309,6 +367,7 @@ export const relationships = [
       "Competition over economic and military dominance; trade war and security concerns.",
   },
   {
+    id: "USA-RUS-Tense",
     nation1Id: "USA",
     nation2Id: "RUS",
     relationship: "Tense Relations",
@@ -316,6 +375,7 @@ export const relationships = [
       "Conflicts over geopolitical influence, including in Ukraine and Syria.",
   },
   {
+    id: "USA-IRN-Tense",
     nation1Id: "USA",
     nation2Id: "IRN",
     relationship: "Tense Relations",
@@ -323,12 +383,14 @@ export const relationships = [
       "Disagreements over Iran's nuclear program, sanctions, and influence in the Middle East.",
   },
   {
+    id: "USA-KOR-Allies",
     nation1Id: "USA",
     nation2Id: "KOR",
     relationship: "Allies",
     details: "Mutual defense treaty and military presence in South Korea.",
   },
   {
+    id: "USA-JPN-Allies",
     nation1Id: "USA",
     nation2Id: "JPN",
     relationship: "Allies",
@@ -336,6 +398,7 @@ export const relationships = [
       "Security alliance and significant trade relations; major military presence in Japan.",
   },
   {
+    id: "CAN-GBR-Allies",
     nation1Id: "CAN",
     nation2Id: "GBR",
     relationship: "Allies",
@@ -343,6 +406,7 @@ export const relationships = [
       "Members of the Commonwealth; strong historical ties, military cooperation.",
   },
   {
+    id: "AUS-GBR-Allies",
     nation1Id: "AUS",
     nation2Id: "GBR",
     relationship: "Allies",
@@ -350,6 +414,7 @@ export const relationships = [
       "Members of the Commonwealth; shared head of state, strong defense cooperation.",
   },
   {
+    id: "DEU-CHN-Trade",
     nation1Id: "DEU",
     nation2Id: "CHN",
     relationship: "Trade Partners",
@@ -357,6 +422,7 @@ export const relationships = [
       "Significant bilateral trade relationship; China is Germany's largest trading partner outside the EU.",
   },
   {
+    id: "IND-RUS-Strategic",
     nation1Id: "IND",
     nation2Id: "RUS",
     relationship: "Strategic Partners",
@@ -364,6 +430,7 @@ export const relationships = [
       "Cooperation on defense, energy, and regional security; historical ties dating back to the Cold War.",
   },
   {
+    id: "BRA-CHN-Trade",
     nation1Id: "BRA",
     nation2Id: "CHN",
     relationship: "Trade Partners",
@@ -371,6 +438,7 @@ export const relationships = [
       "China is Brazil's largest trading partner, particularly in commodities like soybeans and iron ore.",
   },
   {
+    id: "SAU-USA-Strategic",
     nation1Id: "SAU",
     nation2Id: "USA",
     relationship: "Strategic Partners",
@@ -378,6 +446,7 @@ export const relationships = [
       "Cooperation on energy and security matters; long-standing military agreements.",
   },
   {
+    id: "ISR-USA-Allies",
     nation1Id: "ISR",
     nation2Id: "USA",
     relationship: "Allies",
@@ -385,6 +454,7 @@ export const relationships = [
       "Strong military and economic support from the U.S.; cooperation on regional security.",
   },
   {
+    id: "CUB-USA-Tense",
     nation1Id: "CUB",
     nation2Id: "USA",
     relationship: "Tense Relations",
@@ -392,27 +462,22 @@ export const relationships = [
       "Historical embargoes and limited diplomatic engagement; occasional thawing in relations.",
   },
   {
-    nation1Id: "KOR",
-    nation2Id: "JPN",
-    relationship: "Tense Relations",
-    details:
-      "Historical disputes, especially over wartime issues; affect current diplomatic relations.",
-  },
-  {
+    id: "TUR-GRC-Tense",
     nation1Id: "TUR",
     nation2Id: "GRC",
     relationship: "Tense Relations",
     details: "Disputes over maritime boundaries, airspace, and Cyprus.",
   },
   {
+    id: "RUS-CHN-Strategic",
     nation1Id: "RUS",
     nation2Id: "CHN",
     relationship: "Strategic Partners",
     details:
       "Cooperation on economic and military matters; mutual interest in countering U.S. influence.",
   },
-  // Ukraine Conflict
   {
+    id: "RUS-UKR-War",
     nation1Id: "RUS",
     nation2Id: "UKR",
     relationship: "War",
@@ -420,6 +485,7 @@ export const relationships = [
       "Ongoing conflict since 2014 with the annexation of Crimea by Russia and a full-scale invasion in 2022; major geopolitical and humanitarian crisis.",
   },
   {
+    id: "UKR-USA-Allies",
     nation1Id: "UKR",
     nation2Id: "USA",
     relationship: "Allies",
@@ -427,22 +493,15 @@ export const relationships = [
       "The U.S. provides significant military, economic, and humanitarian aid to Ukraine in response to Russian aggression.",
   },
   {
-    nation1Id: "UKR",
-    nation2Id: "EU",
-    relationship: "Allies",
-    details:
-      "European Union supports Ukraine with sanctions against Russia and aid packages; Ukraine seeks EU membership.",
-  },
-  {
+    id: "UKR-POL-Allies",
     nation1Id: "UKR",
     nation2Id: "POL",
     relationship: "Allies",
     details:
       "Poland is a key supporter of Ukraine, providing military aid and taking in millions of refugees.",
   },
-
-  // Other Wars/Conflicts
   {
+    id: "SYR-TUR-Conflict",
     nation1Id: "SYR",
     nation2Id: "TUR",
     relationship: "Conflict",
@@ -450,6 +509,7 @@ export const relationships = [
       "Ongoing conflict related to the Syrian Civil War and Kurdish forces; refugee crisis and cross-border military actions.",
   },
   {
+    id: "ETH-ERI-Tense",
     nation1Id: "ETH",
     nation2Id: "ERI",
     relationship: "Tense Relations",
@@ -457,6 +517,7 @@ export const relationships = [
       "Tensions over border disputes and the Tigray conflict; historical war from 1998-2000, with recent attempts at reconciliation.",
   },
   {
+    id: "SAU-YEM-War",
     nation1Id: "SAU",
     nation2Id: "YEM",
     relationship: "War",
@@ -464,6 +525,7 @@ export const relationships = [
       "Saudi Arabia leads a coalition against Houthi rebels in Yemen since 2015, creating a humanitarian disaster.",
   },
   {
+    id: "IND-PAK-Tense",
     nation1Id: "IND",
     nation2Id: "PAK",
     relationship: "Tense Relations",
@@ -471,6 +533,7 @@ export const relationships = [
       "Frequent military skirmishes and political tensions over Kashmir; both countries possess nuclear weapons.",
   },
   {
+    id: "CHN-TWN-Tense",
     nation1Id: "CHN",
     nation2Id: "TWN",
     relationship: "Tense Relations",
@@ -478,116 +541,11 @@ export const relationships = [
       "China views Taiwan as a breakaway province, while Taiwan claims independence; increasing military tension in the region.",
   },
   {
+    id: "ARM-AZE-Conflict",
     nation1Id: "ARM",
     nation2Id: "AZE",
     relationship: "Conflict",
     details:
       "Nagorno-Karabakh conflict over disputed territory; multiple wars, with recent fighting in 2020 and 2022.",
-  },
-  // Additional Wars and Conflicts
-  {
-    nation1Id: "ETH",
-    nation2Id: "TIG",
-    relationship: "Civil War",
-    details:
-      "Ongoing conflict between Ethiopian government forces and Tigray People's Liberation Front since 2020; humanitarian crisis.",
-  },
-  {
-    nation1Id: "MMR",
-    nation2Id: "ROH",
-    relationship: "Conflict",
-    details:
-      "Ongoing persecution and violence against Rohingya Muslims in Myanmar; international concerns over human rights violations.",
-  },
-  {
-    nation1Id: "ISR",
-    nation2Id: "LBN",
-    relationship: "Tense Relations",
-    details:
-      "Periodic conflicts, including 2006 Lebanon War; ongoing tensions over Hezbollah's presence in Lebanon.",
-  },
-  {
-    nation1Id: "SDN",
-    nation2Id: "SSD",
-    relationship: "Conflict",
-    details:
-      "Ongoing border disputes and conflicts since South Sudan's independence in 2011; humanitarian crisis.",
-  },
-  {
-    nation1Id: "LBY",
-    nation2Id: "LBY",
-    relationship: "Civil War",
-    details:
-      "Ongoing civil war since 2014 with multiple factions vying for control; international intervention.",
-  },
-  {
-    nation1Id: "CAF",
-    nation2Id: "CAF",
-    relationship: "Civil War",
-    details:
-      "Ongoing civil war since 2012; religious and ethnic tensions; peacekeeping efforts by UN and African Union.",
-  },
-  {
-    nation1Id: "COD",
-    nation2Id: "COD",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing conflicts in eastern DR Congo involving multiple armed groups; humanitarian crisis.",
-  },
-  {
-    nation1Id: "NGA",
-    nation2Id: "NGA",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing Boko Haram insurgency in northeastern Nigeria; conflicts between farmers and herders in central regions.",
-  },
-  {
-    nation1Id: "MEX",
-    nation2Id: "MEX",
-    relationship: "Drug War",
-    details:
-      "Ongoing conflict between the Mexican government and various drug cartels; high levels of violence and corruption.",
-  },
-  {
-    nation1Id: "COL",
-    nation2Id: "COL",
-    relationship: "Internal Conflict",
-    details:
-      "Long-standing conflict with FARC rebels; 2016 peace agreement, but challenges remain with dissident groups.",
-  },
-  {
-    nation1Id: "IND",
-    nation2Id: "IND",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing Naxalite-Maoist insurgency in eastern India; separatist movements in northeastern states.",
-  },
-  {
-    nation1Id: "THA",
-    nation2Id: "THA",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing separatist insurgency in southern Thailand; periodic political unrest and military coups.",
-  },
-  {
-    nation1Id: "PHL",
-    nation2Id: "PHL",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing conflicts with communist rebels and Islamist groups in southern Philippines.",
-  },
-  {
-    nation1Id: "TUR",
-    nation2Id: "TUR",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing conflict with Kurdish separatist groups, particularly the PKK; periodic terrorist attacks.",
-  },
-  {
-    nation1Id: "IRQ",
-    nation2Id: "IRQ",
-    relationship: "Internal Conflict",
-    details:
-      "Ongoing conflicts with remnants of ISIS; tensions between central government and Kurdish region.",
   },
 ];

@@ -4,7 +4,7 @@ import { TextField } from "@mui/material";
 
 const SearchBar = ({ searchQuery, onSearchChange }) => (
   <TextField
-    label="Search for a nation..."
+    label="Search for one or two nations (separate by comma)"
     variant="outlined"
     fullWidth
     margin="normal"

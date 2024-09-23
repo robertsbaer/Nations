@@ -54,6 +54,7 @@ export const nations = [
   { id: "SAU", name: "Saudi Arabia" },
   { id: "ISR", name: "Israel" },
   { id: "SYR", name: "Syria" },
+  { id: "BTN", name: "Bhutan" },
 
   // Oceania
   { id: "AUS", name: "Australia" },

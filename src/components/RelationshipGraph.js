@@ -10,24 +10,6 @@ const RelationshipGraph = ({ relationships, nationMap }) => {
   // State to hold nodes and links
   const [graphData, setGraphData] = useState({ nodes: [], links: [] });
 
-  // State to hold the dimensions
-  const [dimensions, setDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight - 100, // Adjust for header and controls
-  });
-
-  // Update dimensions on window resize
-  useEffect(() => {
-    const handleResize = () => {
-      setDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight - 100, // Adjust as needed
-      });
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
   // Prepare the graph data
   useEffect(() => {
     setLoading(true);
@@ -40,6 +22,7 @@ const RelationshipGraph = ({ relationships, nationMap }) => {
 
       relationships.forEach((relation) => {
         const {
+          id,
           nation1Id,
           nation2Id,
           relationship: relType,
@@ -60,6 +43,7 @@ const RelationshipGraph = ({ relationships, nationMap }) => {
 
         // Add link with '__' prefix for custom properties
         links.push({
+          id, // Unique identifier
           source: nation1Id,
           target: nation2Id,
           __label: relType,
@@ -137,18 +121,49 @@ const RelationshipGraph = ({ relationships, nationMap }) => {
     );
   }
 
+  // Adjust the link curvature for self-loops and multiple links
+  const getLinkCurvature = (link) => {
+    if (link.source === link.target) {
+      // Self-loop
+      return 0.5; // Adjust curvature for self-loops
+    }
+
+    const sameLinks = graphData.links.filter(
+      (l) =>
+        (l.source === link.source && l.target === link.target) ||
+        (l.source === link.target && l.target === link.source)
+    );
+
+    if (sameLinks.length === 1) {
+      return 0; // No curvature needed
+    } else {
+      const index = sameLinks.findIndex((l) => l.id === link.id);
+      const direction = link.source < link.target ? 1 : -1;
+      const curvature =
+        ((index - (sameLinks.length - 1) / 2) / (sameLinks.length / 2)) *
+        0.5 *
+        direction;
+      return curvature;
+    }
+  };
+
+  // Adjust the arrow positioning for self-loops
+  const getLinkDirectionalArrowRelPos = (link) => {
+    if (link.source === link.target) {
+      return 1; // Position arrow at the end of the self-loop
+    }
+    return 0.5; // Default position for other links
+  };
+
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <ForceGraph2D
         ref={fgRef}
         graphData={graphData}
-        width={dimensions.width}
-        height={dimensions.height}
-        // Restore colors
-        nodeAutoColorBy="group" // Adjust if not using 'group'
-        linkColor={(link) =>
-          relationshipColors[link.__label || link.label] || "gray"
-        }
+        width={window.innerWidth}
+        height={window.innerHeight - 90} // Adjust for header and controls
+        nodeAutoColorBy="id" // Color nodes based on their ID
+        linkColor={(link) => relationshipColors[link.__label] || "gray"}
         nodeCanvasObject={(node, ctx, globalScale) => {
           const label = nationMap[node.id];
           const fontSize = 12 / globalScale;
@@ -171,10 +186,9 @@ const RelationshipGraph = ({ relationships, nationMap }) => {
           ctx.fillText(label, node.x, node.y - 10 / globalScale);
         }}
         linkDirectionalArrowLength={6}
-        linkDirectionalArrowRelPos={1}
+        linkDirectionalArrowRelPos={getLinkDirectionalArrowRelPos}
         linkWidth={1.5}
-        // Set curvature for self-loops
-        linkCurvature={(link) => (link.source === link.target ? 0.5 : 0)}
+        linkCurvature={getLinkCurvature}
         nodeLabel={(node) => nationMap[node.id]}
         linkLabel={(link) => {
           const sourceId =
